@@ -1,48 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Project π — Chapter 4: The Convergence</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="chapter4.css">
-</head>
-<body>
-  <div id="particles"></div>
-  <div class="collision"></div>
-  <div class="scanlines"></div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT π | Parāvartya Yojayet</title>
 
-  <main class="stage">
-    <header class="title-wrap">
-      <h1 class="glitch" data-text="CHAPTER 4 — THE CONVERGENCE">CHAPTER 4 — THE CONVERGENCE</h1>
-      <p class="sub">Signals collide. Two patterns overlap. The auditorium remembers every number said aloud.</p>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chapter4.css">
+</head>
+
+<body>
+
+<div class="simulator-container">
+
+    <!-- HEADER -->
+    <header class="simulator-header">
+        <h1 class="chapter-title">
+            PROJECT <span class="math-symbol">π</span> : CHAPTER 4
+        </h1>
+        <p class="subtitle">
+            Parāvartya Yojayet • Division by Transposition
+        </p>
     </header>
 
-    <section id="intro" class="card intro-card">
-      <p class="intro-text">The auditorium's lights bent into lines; red and blue shards met at a point that hummed like a tuning fork. Here, multiple clues from earlier chapters line up — and only a combined solution will reveal the next Rift Insight.</p>
-      <button id="beginBtn" class="btn primary">Approach the Convergence</button>
+    <!-- DEMO -->
+    <section class="data-panel">
+        <h2 class="panel-title">DEMO: 133 ÷ 12</h2>
+        <p class="log-text">
+            Base = 10 → Transposed divisor = −2  
+            Follow: Drop → Multiply → Add
+        </p>
+
+        <button class="control-button" onclick="startDemo()">
+            START DEMO
+        </button>
+
+        <p id="demo-status" class="log-text"></p>
+
+        <div id="demo-board" class="demo-board hidden">
+            <div class="row">
+                <span>Step</span><span>Operation</span><span>Result</span>
+            </div>
+            <div id="demo-steps"></div>
+        </div>
     </section>
 
-    <section id="quiz" class="card hidden">
-      <div id="questionArea"></div>
-      <div class="controls">
-        <button id="submitBtn" class="btn primary">Submit Answers</button>
-        <button id="resetBtn" class="btn ghost">Reset</button>
-      </div>
-      <p id="scoreText" class="score"></p>
+    <!-- MASTER TRIAL -->
+    <section class="data-panel">
+        <h2 class="panel-title">MASTER TRIAL</h2>
+        <p class="log-text">
+            Solve: <strong>1311 ÷ 113</strong><br>
+            Correct the result if needed.
+        </p>
+
+        <div class="lock-inputs">
+            <label>Quotient
+                <input type="number" id="finalQ" placeholder="11">
+            </label>
+            <label>Remainder
+                <input type="number" id="finalR" placeholder="68">
+            </label>
+        </div>
+
+        <button class="control-button" onclick="checkAnswer()">
+            VERIFY
+        </button>
+
+        <p id="final-message" class="log-text"></p>
     </section>
 
-    <section id="fact" class="card hidden fact-card">
-      <h2>🔓 Convergence Insight Unlocked</h2>
-      <p id="factText"></p>
-      <div class="fact-note">This insight ties puzzles from Ch1–Ch4. Save it; it's critical for the endgame.</div>
-      <a id="nextLink" class="btn next" href="../chapter5/chapter5.html" style="display:none">➡ Proceed to Chapter 5</a>
+    <!-- SUCCESS -->
+    <section id="success-panel" class="data-panel hidden">
+        <p class="success-text">
+            SUTRA MASTERED. BALANCE RESTORED.
+        </p>
+        <div class="qr-placeholder">QR</div>
+        <p class="next-hint">
+            NEXT: The Zero Sum — Finding Equality
+        </p>
     </section>
 
-    <footer class="footer">
-      <div class="small">Project: π — Chapter 4</div>
-    </footer>
-  </main>
+</div>
 
-  <script src="chapter4.js"></script>
+<script src="chapter4.js"></script>
 </body>
 </html>
